@@ -1,0 +1,29 @@
+﻿@model ContatoModel
+@{
+    ViewData["Title"] = "Editar Contato";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="">
+    <h1 class="display-4 text-center">Editar contato</h1>
+
+    <a class="pe-auto pl-5 ml-5" asp-controller="Contato" asp-action="Index"><i class="bi bi-arrow-left font-weight-bold" style="font-size:26px"></i></a>
+
+    <div class="w-25 mx-auto">
+        <form asp-controller="Contato" asp-action="Editar" method="post" class="mx-auto pt-5 text-start">
+            <div class="mb-3">
+                <label for="InputNome" class="form-label">Nome</label>
+                <input type="text" class="form-control" id="InputNome" asp-for="Nome"/>
+            </div>
+            <div class="mb-3">
+                <label for="InputEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="InputEmail" asp-for="Email">
+            </div>
+            <div class="mb-3">
+                <label for="InputTelefone" class="form-label">Telefone</label>
+                <input type="tel" class="form-control" id="InputTelefone" asp-for="Telefone">
+            </div>
+            <button type="submit" class="btn btn-primary d-inline-block w-100">Editar</button>
+        </form>
+    </div>
+</div>

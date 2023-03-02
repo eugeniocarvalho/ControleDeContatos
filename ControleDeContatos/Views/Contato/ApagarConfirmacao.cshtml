@@ -1,0 +1,29 @@
+﻿@model ContatoModel
+@{
+    ViewData["Title"] = "Apagar Contato";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="">
+    <h1 class="display-4 text-center">Deseja realmente apagar o contato?</h1>
+
+    <a class="pe-auto pl-5 ml-5" asp-controller="Contato" asp-action="Index"><i class="bi bi-arrow-left font-weight-bold" style="font-size:26px"></i></a>
+
+    <div class="d-flex justify-content-center flex-column align-items-center pt-5">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <div class="d-flex justify-content-center flex-column align-items-center">
+                    <div>
+                        <p>Nome: <b>@Model.Nome</b></p>
+                        <p>Email: <b>@Model.Email</b></p>
+                        <p>Telefone: <b>@Model.Telefone</b></p>
+                    </div>
+                    <div class="d-flex w-50 justify-content-between align-items-center">
+                        <a style="font-size: 36px" class="" asp-controller="Contato" asp-action="Index"><i class="bi text-danger bi-x-circle-fill"></i></a>
+                        <a style="font-size: 36px" class="" asp-controller="Contato" asp-action="Apagar" asp-route-id="@Model.Id"><i class="bi text-primary bi-check-circle-fill"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
